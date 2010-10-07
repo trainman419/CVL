@@ -1,0 +1,74 @@
+***************
+*** 210,215 ****
+  gaps, dips, and bowing when modules are clamped together.</P>
+  </OL>
+  
+  </div>
+  
+  <div id="footer">
+--- 241,305 ----
+  gaps, dips, and bowing when modules are clamped together.</P>
+  </OL>
+  
++ <h3>Corner Modules</h3>
++ 
++ 
++ 
++ <OL TYPE=A>
++ <P><LI>Corner modules shall be constructed as shown in figure 6.  
++ Curves on corner modules shall be constructed as shown in figure 
++ 7.</P>
++ 
++ <P><LI>Corner modules with curves of greater radius are permissible. 
++ These modules or module groups must be the equivalent of a square 
++ with sides that are a multiple of two feet, at the point where 
++ the module or module group mates to the adjacent modules. For 
++ example, the standard corner module is the equivalent of a four 
++ foot square.</P>
++ </OL>
++ 
++ <BR>
++ 
++ <CENTER><H4>Figure 6 - Corner Module Frame Specifications</H4></CENTER><BR>
++ <CENTER><IMG SRC="figure6.gif"></CENTER>
++ 
++ 
++ <P>The basic corner module is 1/2" plywood attached to 1x4" framework, as with
++ regular modules.  Widths and lengths of mating faces can very between the
++ limits shown.  Legs are attached as with standard modules, at the noted
++ locations. (<B>e</B>)</P>
++ 
++ <OL TYPE=a>
++ <P><LI>The front edge is 33" long, 32 1/2" with an outside passing track.</P>
++ 
++ <P><LI>The rear edge is 32" long, 25 1/2" if the 30" width is used.</P>
++ 
++ <P><LI>Corner braces are 2x2" blocks, 3 1/2" long.</P>
++ 
++ <P><LI>All frame members are standard 1x4", lengths as required.</P>
++ 
++ <P><LI>Locations of leg attachments.</P>
++ 
++ </OL>
++ <BR>
++ 
++ <CENTER><H4>Figure 7 - Corner module track specifications</H4></CENTER><br />
++ <CENTER><B>Sample 4' square corner module</B></CENTER><BR>
++ <CENTER><IMG SRC="figure7.gif"></CENTER>
++ 
++ 
++ <OL TYPE=a>
++ <P><LI>The light line shows a greater width module (25" instead of 24") which
++ is to be used whenever the outside passing track is to be applied.</P>
++ 
++ <P><LI>These small section os straight track just after the spanner tracks
++ produce needed spacing between curves and help prevent kinks between the
++ spanners and the module's trackage.</P>
++ 
++ <P><LI>The inside and outside passing tracks are optional.</P>
++ 
++ <P><LI>These are the standard spanner track gaps.</P>
++ </OL>
+  </div>
+  
+  <div id="footer">

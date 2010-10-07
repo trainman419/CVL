@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+Copyright: Darren Hester 2006, http://www.designsbydarren.com
+License: Released Under the "Creative Commons License", 
+http://creativecommons.org/licenses/by-nc/2.5/
+-->
+
+<head>
+
+<!-- Meta Data -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="Short description of your site here." />
+<meta name="keywords" content="keywords, go, here, seperated, by, commas" />
+
+<!-- Site Title -->
+<title>Coastal Valley Lines, Sonoma County, CA</title>
+
+<!-- Link to Style External Sheet -->
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<div id="page_wrapper">
+
+    <div id="header_wrapper">
+
+        <!--#include FILE="header.html" -->
+        <!--#include FILE="tabs.html" -->
+
+    </div>
+
+    <div id="left_side">
+
+        <h3>Club Information</h3>
+
+        <p>
+        <a href="new_members.html">&#149; Information for New &nbsp;&nbsp;Members</a><br>
+        <a href="mem_standards.html">&#149; Membership &nbsp;&nbsp;Standards</a><br>
+        </p>
+
+
+        <h3>Club Standards</h3>
+          <p>
+        <a href="guide.html">&#149; Guidelines for CVL &nbsp;&nbsp;Operations</a><br>
+        <a href="rolling_stock.html">&#149; Rolling Stock &nbsp&nbsp;Standards</a><br>
+        <a href="modules.html">&#149; Module Standards</a><br>
+        <a href="tracks.html">&#149; Track Standards</a><br>
+        <a href="electrical.html">&#149; Electrical Standards</a><br>
+        </p>
+
+    </div>
+
+    <div id="right_side">
+
+        <h3>Timetable</h3>
+
+        <!--<a href="#">Link Can Go Here</a>-->
+        <p><strong>Our Monthly Meetings</strong> are normally held the first THURSDAY of each month, BUT occasionally have to be rescheduled.</p>
+        <p>Our Meetings are held at Sam's For Play Cafe, 2630 Cleveland Avenue, Santa Rosa at 7:00 PM. Car check-in begins at 6:30 PM.</p>
+
+                <h3>Other Modular Railroad Clubs</h3>
+        <p>
+        <a href="http://saccentral.railfan.net/index.html" target="_blank">&#149; Sacramento Modular &nbsp;&nbsp;Railroads</a><br>
+        <a href="http://trainweb.org/ocmr/" target="_blank">&#149; Orange County &nbsp;&nbsp;Module Railroads</a><br>
+        </p>
+      <h3>More Railroad Clubs</h3>
+            <p>
+                <a href="http://slomra.org" target="_blank">&#149; San Luis Obispo Model &nbsp;&nbsp;&nbsp;Railroad Club</a><br>
+            </p>  
+    </div>
+
+
+<div id="content">
+
+    <h3>Coastal Valley Lines</h3>
+
+    <div class='featurebox_center'>
+   
+        <p><img src="http://trainman.homelinux.net/amerkrebs/home.jpg"/></p>
+        <p>The Coastal Valley Lines (CVL) is an informal association of novice to expert model railroaders from around the Sonoma County, California area. We operate our HO modular railroad at public and private events, and also gather for clinics, work sessions and regular monthly meetings.</p>
+        <p>The members all agree to use a set of standards (technical guidelines) for the construction of their modules. Members also follow standards to prepare their rolling stock (cars and locomotives) before operating them. This ensures reliable operation, which helps us to have fun running trains!     
+        
+        <h4>Our Train Show Schedule for the remainder of 2010:</h4>
+        <p><b>&#149; September 17-19</b> Redwood Empire Train Show. Santa Rosa Fairgrounds Home Show</p>
+        <p><b>&#149; October 23-24</b> Vineyard Commons, 1401 Round Barn Blvd, Santa Rosa</p>
+        <p><b>&#149; November 13-14</b> Varenna at Fountaingrove. 1401 Fountain Grove Parkway, Santa Rosa</p>          
+    </div>
+</div>
+
+<div id="footer_index">
+
+<a href="index.shtml">Home Page</a> | 
+<a href="pictures.html">Pictures</a>
+<br />
+<P>Web page is updated and maintained by <A HREF="mailto:legotown@aol.com?subject=Coastal Valley Lines">Austin Hendrix,</A> <A HREF="mailto:amerkrebs@gmail?subject=Coastal Valley Lines">Al Merkrebs</A> and <A HREF="mailto:bkhendrix@aol.com?subject=Coastal Valley Lines">Blain Hendrix</A>.    Originally maintained by <A HREF="mailto:johnreplymailbox-cvl@yahoo.com">John Rolston</A>.  Originally designed by Cornell Chesnik; standards & diagrams entered by Jann Mayer<br />
+Last updated September 25, 2010
+<br /><br />
+Template provided by: 
+<a href="http://www.designsbydarren.com" target="_blank">DesignsByDarren.com</a>
+
+</div>
+
+</body>
+
+</html>
