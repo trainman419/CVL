@@ -90,7 +90,7 @@ A:hover {
 }
 
 #footer_index {
-  height: 100px;
+  height: 130px;
   background-color: #4E7DD1;
   clear: both;
   text-align: center;
@@ -117,13 +117,13 @@ A:hover {
 #footer_index A:link {
 	COLOR: #FFFFFF; text-decoration: none;
 }
-#footer A:visited {
+#footer_index A:visited {
 	COLOR: #FFFFFF; text-decoration: none;
 }
-#footer A:active {
+#footer_index A:active {
 	COLOR: #FFFFFF; text-decoration: none;
 }
-#footer A:hover {
+#footer_index A:hover {
 	COLOR: #FFFFFF; text-decoration: underline;
 }
 
