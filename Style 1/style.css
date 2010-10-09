@@ -1,0 +1,154 @@
+#container {
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#header {
+	height: 100px;
+	width: 1024px;
+	--background-image: ;
+}
+
+#content {
+	width: 500px;
+	padding: 10px;
+	margin-right: 160px;
+	margin-left: 160px;
+}
+#leftnav {
+	float: left;
+	width: 140px;
+	height: 400px;
+	background-color: #30D9F4;
+	padding: 5px;
+		
+}
+
+#leftnav ul
+{
+	margin-left: 0;
+	padding-left: 0;
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#leftnav a
+{
+	display: block;
+	width: 130px;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	border-bottom-width: 1px;
+}
+
+#leftnav a:link, .navlist a:visited
+{
+color: #ffffff;
+text-decoration: underline;
+font-weight: bold;
+}
+
+#leftnav a:visited
+{
+   color: #ffffff;
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+#leftnav a:hover
+{
+	text-decoration: none;
+	color: #0000ff;
+}
+
+#sidebar {
+	padding: 10px;
+	float: right;
+	width: 130px;
+	background-color: #30D9F4;
+	height: 390px;
+
+}
+
+#footer {
+	background-color: #2F77F1;
+	padding: 10px;
+	clear: both;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	color: #1A2373;
+	line-height: 24px;
+}
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	color: #2F77F1;
+	line-height: 20px;
+}
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #000000;
+	line-height: 20px;
+}
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 11pt;
+	margin-top: 3px;
+	margin-right: 0;
+	margin-bottom: 3px;
+	margin-left: 0;
+	padding-bottom: 9px;
+}
+
+a {
+	color: #E82525;
+	font-weight: bold;
+	text-decoration: underline;
+}
+a:visited {
+	color: #E82525;
+	text-decoration: underline;
+	font-weight : bold;
+}
+a:hover {
+	color: #901BBE;
+	text-decoration: none;
+}
+
+
+.box1 {
+	background:#ffffff;
+	color: #000;
+	border:1px solid #00ffff;
+	width: 400px;
+	height: 165px;
+	padding-top: 5;
+	padding-right: 6px;
+	padding-bottom: 0;
+	padding-left: 6px;
+	line-height: 16px;
+}
+
+.smalltext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding: 3px 0;
+    margin: 3px 0;
+	line-height: 12pt
+}

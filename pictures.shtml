@@ -1,0 +1,17 @@
+<!--#include FILE="header.html" -->
+<!--#include FILE="sidebars.html" -->
+<div id="content">
+
+    <h3>Pictures of Past Coastal Valley Line Shows</h3>
+
+    <div class='featurebox_center'>
+   
+<h2><A HREF="pics/paulin07/lodge07.html">The Lodge at Paulin Creek, Feb 24-25, 2007</a></h2>
+
+<h2><A HREF="pics/cpi07/cpi07.html">CPI Family Expo, March 10-11, 2007</a></h2>
+
+<h2><A HREF="pics/vineyard07/vineyard07.html">Vineyard Commons, October 6-7, 2007</i></A></h2>
+
+</div>
+
+<!--#include FILE="footer.html" -->
