@@ -198,6 +198,10 @@ A:hover {
   color: #2153AA;
 }
 
+#picture_content img {
+   text-align: center;
+}
+
 #navlist
 {
   margin-top:1px;
