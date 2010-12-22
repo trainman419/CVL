@@ -77,6 +77,13 @@ A:hover {
   margin-right: 180px;
 }
 
+#picture_content {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 #footer {
   height: 50px;
   background-color: #4E7DD1;
@@ -179,6 +186,15 @@ A:hover {
   font-size: 14px;
   font-weight: bold;
   line-height: 12px;
+  color: #2153AA;
+}
+
+#picture_content h3 {
+  margin-top:5px; margin-bottom: 10px;
+  font-family: verdana, arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
   color: #2153AA;
 }
 
