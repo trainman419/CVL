@@ -21,7 +21,7 @@ if( isset($_GET["page"] ) ) {
       $title = "Sorry, no title for this album yet";
       if( file_exists("$pic_dir/.index.txt") and 
                false !== ($fh = fopen("$pic_dir/.index.txt", "r")) ) {
-         $title = fgets($fh);
+         $title = htmlentities(fgets($fh));
          fclose($fh);
       }
    }
@@ -134,7 +134,7 @@ if( $dir = opendir($pic_dir) ) {
                $name = $file;
                if( file_exists("$pic_dir/$file/.index.txt") and 
                      ($fh = fopen("$pic_dir/$file/.index.txt", "r") ) ) {
-                  $name = fgets($fh);
+                  $name = htmlentities(fgets($fh));
                   fclose($fh);
                }
                print "<h2><a href=\"pics.php?page=$file\">$name</h2>\n";
