@@ -137,7 +137,7 @@ if( $dir = opendir($pic_dir) ) {
                   $name = htmlentities(fgets($fh));
                   fclose($fh);
                }
-               print "<h2><a href=\"pics.php?page=$file\">$name</h2>\n";
+               print "<h2><a href=\"pics.php?page=$file\">$name</a></h2>\n";
             }
          }
 
