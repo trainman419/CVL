@@ -78,7 +78,7 @@ if( $login ) {
          if( isset($_POST['title']) ) {
             $title = $_POST['title'];
             if( false !== ($fh = fopen("$pic_dir/.index.txt", "w")) ) {
-               fwrite($fh, $title);
+               fwrite($fh, "$title\n");
                fclose($fh);
             }
          }
