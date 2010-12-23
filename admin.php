@@ -1,13 +1,20 @@
 <?php
 
+session_start();
+
 # TODO:
 #  - auto thumbnails
 #  - admin/upload page
+#  - protect our guts with htaccess (.git, .htaccess, etc)
+#  - turn off auto index pages
 
 # Admin page
 # Modes:
 #  - Album overview; add new albums
 #  - Album view: name/rename album, upload new photos
+#
+# TODO: login with cookies
+# TODO: log out (destroy session)
 
 # cofiguration variables
 $pic_dir = 'pictures';
@@ -16,52 +23,88 @@ $title = 'Picture Admin Page';
 # header and sidebars
 include 'header.html';
 
-# figure out if we're viewing an album and adjust
-$page = false;
-if( isset($_GET["page"] ) ) {
-   if( file_exists("$pic_dir/".$_GET['page']) ) {
-      $page = $_GET['page'];
-      $pic_dir = "$pic_dir/$page";
+# look for and validate login credentials
+if( isset($_POST['name']) and isset($_POST['pass']) ) {
+   $name = $_POST['name'];
+   $pass = $_POST['pass'];
 
-      $title = "";
-      if( file_exists("$pic_dir/.index.txt") and 
+   $htpass = fopen(".htpasswd", "r");
+   if( $htpass ) {
+      while( false !== ($line = fgets($htpass)) ) {
+         $array = explode(':', $line);
+
+         # look for matching name
+         if( $array[0] == $name ) {
+            $crypt = chop($array[1]);
+
+            # if name and crypted passwords match, set login
+            if( crypt($pass, substr($crypt,0,CRYPT_SALT_LENGTH)) == $crypt ) {
+               $_SESSION['login'] = $name;
+            }
+         }
+      }
+      fclose($htpass);
+   }
+
+   unset($name);
+   unset($pass);
+}
+# done validating login
+
+$login = false;
+if( isset($_SESSION['login']) ) {
+   $login = $_SESSION['login'];
+}
+
+if( $login ) {
+# figure out if we're viewing an album and adjust
+   $page = false;
+   if( isset($_GET["page"] ) ) {
+      if( file_exists("$pic_dir/".$_GET['page']) ) {
+         $page = $_GET['page'];
+         $pic_dir = "$pic_dir/$page";
+
+         $title = "";
+         if( file_exists("$pic_dir/.index.txt") and 
                false !== ($fh = fopen("$pic_dir/.index.txt", "r")) ) {
-         $title = htmlentities(fgets($fh));
-         fclose($fh);
+            $title = htmlentities(fgets($fh));
+            fclose($fh);
+         }
       }
    }
-}
 
 # open our directory and get a listing
-$files = array();
+   $files = array();
 
-if( $dir = opendir($pic_dir) ) {
+   if( $dir = opendir($pic_dir) ) {
 
-   while( false !== ($file = readdir($dir))) {
-      if( ! preg_match('/^\./', $file) ) {
-         $files[] = $file;
+      while( false !== ($file = readdir($dir))) {
+         if( ! preg_match('/^\./', $file) ) {
+            $files[] = $file;
+         }
       }
-   }
 
-   closedir($dir);
+      closedir($dir);
+   }
 }
 
-# code here
 ?>
 <div id="picture_content">
 <h3><?
-   # page title here
-   if( $page ) {
-      print "<form action=\"admin.php\" method=\"post\">\n";
-      print "<input type=\"text\" name=\"title\" value=\"$title\"/>\n";
-      print "<input type=\"submit\" value=\"update\"/>\n";
-      print "</form>\n";
-   } else {
-      print $title;
-   }
+# page title here
+if( $page and $login ) {
+   print "<form action=\"admin.php\" method=\"post\">\n";
+   print "<input type=\"text\" name=\"title\" value=\"$title\"/>\n";
+   print "<input type=\"submit\" value=\"update\"/>\n";
+   print "</form>\n";
+} else {
+   print $title;
+}
 ?></h3>
-   <div class='featurebox_center'>
-   <?
+<div class='featurebox_center'>
+<?
+
+if( $login ) {
    if( $page ) {
       print "<table width=\"100%\"><tr>\n";
    }
@@ -86,7 +129,8 @@ if( $dir = opendir($pic_dir) ) {
 
    if( $page ) {
       print "</tr></table>\n";
-      # TODO: upload new picture here
+      # Upload for new picture
+      # TODO: fix color scheme and formatting; better field labels
       print "<form action=\"admin.php\" method=\"post\" enctype=\"multipart/form-data\">\n";
       print "<input type=\"file\" name=\"newpic\" size=\"50\"/>\n";
       print "<input type=\"submit\" value=\"upload\"/>\n";
@@ -94,6 +138,19 @@ if( $dir = opendir($pic_dir) ) {
    } else {
       # TODO: add new album here
    }
+} else {
+   # not logged in; display login page
+   ?>
+      <h4>Please Log in</h4>
+      <form action="admin.php" method="post">
+      <table>
+      <tr><td>Name:</td><td><input type="text" name="name"/></td></tr>
+      <tr><td>Password:</td><td><input type="password" name="pass"/></td></tr>
+      <tr><td></td><td><input type="submit" value="Log In"/></td></tr>
+      </table>
+      </form>
+   <?
+}
 
 
 ?>
