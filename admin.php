@@ -54,18 +54,18 @@ if( isset($_POST['name']) and isset($_POST['pass']) ) {
 $login = false;
 if( isset($_SESSION['login']) ) {
    $login = $_SESSION['login'];
-
-    # FIXME: remove this when we're done debugging
-   unset($_SESSION['login']);
 }
 
 if( $login ) {
-# figure out if we're viewing an album and adjust
+   $here = "admin.php";
+
+   # figure out if we're viewing an album and adjust
    $page = false;
    if( isset($_GET["page"] ) ) {
       if( file_exists("$pic_dir/".$_GET['page']) ) {
          $page = $_GET['page'];
          $pic_dir = "$pic_dir/$page";
+         $here = "$here?page=$page";
 
          $title = "";
          if( file_exists("$pic_dir/.index.txt") and 
@@ -73,10 +73,20 @@ if( $login ) {
             $title = htmlentities(fgets($fh));
             fclose($fh);
          }
+
+         # Update album title
+         if( isset($_POST['title']) ) {
+            $title = $_POST['title'];
+            if( false !== ($fh = fopen("$pic_dir/.index.txt", "w")) ) {
+               fwrite($fh, $title);
+               fclose($fh);
+            }
+         }
+
       }
    }
 
-# open our directory and get a listing
+   # open our directory and get a listing
    $files = array();
 
    if( $dir = opendir($pic_dir) ) {
@@ -89,6 +99,32 @@ if( $login ) {
 
       closedir($dir);
    }
+
+   # Add photo to album
+   if( $page and isset($_FILES['newpic']) ) {
+      $uploadpath = $_FILES['newpic']['tmp_name'];
+
+      # get the original file extension
+      $origname = $_FILES['newpic']['name'];
+      $parts = explode(".", strtolower($origname));
+      $ext = $parts[count($parts)-1];
+
+      if( $ext == "jpg" or $ext = "jpeg" ) {
+         $newname = $files[count($files)-1];
+         $tmp = explode(".",$newname);
+         $newname = $tmp[0];
+         $tmp = sscanf($newname, "%d");
+         $newname = $tmp[0] + 1;
+         $newname = "$newname.jpg";
+         move_uploaded_file($uploadpath, "$pic_dir/$newname");
+         $img_path = escapeshellarg("$pic_dir/$newname");
+         $thumb_path = escapeshellarg("$pic_dir/.thumbnails/$newname");
+         exec("convert -resize 240x240 $img_path $thumb_path");
+         $files[] = $newname;
+      } else {
+         print "File upload failed: wrong file extension. Please upload jpeg images<br/>\n";
+      }
+   }
 }
 
 ?>
@@ -96,8 +132,8 @@ if( $login ) {
 <h3><?
 # page title here
 if( $page and $login ) {
-   print "<form action=\"admin.php\" method=\"post\">\n";
-   print "<input type=\"text\" name=\"title\" value=\"$title\"/>\n";
+   print "<form action=\"$here\" method=\"post\">\n";
+   print "<input type=\"text\" name=\"title\" size=\"80\" value=\"$title\"/>\n";
    print "<input type=\"submit\" value=\"update\"/>\n";
    print "</form>\n";
 } else {
@@ -134,10 +170,16 @@ if( $login ) {
       print "</tr></table>\n";
       # Upload for new picture
       # TODO: fix color scheme and formatting; better field labels
-      print "<form action=\"admin.php\" method=\"post\" enctype=\"multipart/form-data\">\n";
-      print "<input type=\"file\" name=\"newpic\" size=\"50\"/>\n";
-      print "<input type=\"submit\" value=\"upload\"/>\n";
-      print "</form>\n";
+      ?>
+         <h4>Upload Picture</h4>
+         <?
+      print "<form action=\"$here\" method=\"post\" enctype=\"multipart/form-data\">\n";
+      ?>
+      <input type="file" name="newpic" size="50"/>
+      <input type="submit" value="upload"/>
+      </form>
+      (recommended size no larger than 800x800)
+      <?
    } else {
       # TODO: add new album here
    }
