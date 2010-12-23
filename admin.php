@@ -54,6 +54,9 @@ if( isset($_POST['name']) and isset($_POST['pass']) ) {
 $login = false;
 if( isset($_SESSION['login']) ) {
    $login = $_SESSION['login'];
+
+    # FIXME: remove this when we're done debugging
+   unset($_SESSION['login']);
 }
 
 if( $login ) {
