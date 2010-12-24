@@ -56,6 +56,11 @@ if( isset($_SESSION['login']) ) {
    $login = $_SESSION['login'];
 }
 
+# Don't allow slashes in page parameter
+if( preg_match("|/|", $_GET['page']) ) {
+   unset($_GET['page']);
+}
+
 if( $login ) {
    $here = "admin.php";
 
